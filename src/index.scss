@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  font-family: "Poppins" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*
+  {
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+}
+
+
+input,
+select,
+textarea {
+  width: auto;
+  height: auto;
+  padding: 8px 10px 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #d9dadb;
+  outline: 0;
+
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    color: #979797;
+  }
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkmark {
+      background-color: #00af80;
+    }
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #ccc;
+    border-radius: 3px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  /* // &:hover input~.checkmark {
+  //   background-color: #ccc;
+
+  // } */
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 7px;
+    height: 14px;
+    border: solid white;
+    border-radius: 15%;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.label_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .breadcrumb_list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0;
+
+    li {
+      list-style: none;
+      cursor: pointer;
+
+      &.icon {
+        cursor: default;
+      }
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  padding: 3px;
+  border-radius: 4px;
+  background: #ddebfc;
+  cursor: pointer;
+
+  .icon {
+    color: #08192b;
+    stroke-width: 2;
+    width: 20px;
+    height: 14px;
+    display: grid;
+    place-items: center;
+  }
+
+  .options {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
+    min-width: 128px;
+    min-height: 134px;
+    right: 0;
+    top: 110%;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0px 4px 9px 0px #00000026;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 3px;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: all 0.2s;
+
+    li {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      line-height: 17.64px;
+      gap: 6px;
+      border-radius: 4px;
+      padding: 10px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      &:hover {
+        background-color: #ddebfc;
+      }
+
+      &.trash {
+        color: #c5221f;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+
+        svg {
+          stroke-width: 2;
+          font-size: 15px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .options {
+      transform: scale(1);
+    }
+  }
+}
+
+.heading1 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.heading2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0em;
+  // text-align: left;
+}
+
+.heading3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.heading4 {
+  font-size: 14px !important;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.heading5 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.heading6 {
+  font-family: Plus Jakarta Sans;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
